@@ -57,6 +57,7 @@ body {
 	color: var(--font-color);
 	font-size: 1.6rem;
 	line-height: 1.5;
+    text-align: center;
 	background-color: #fff;
 }
 
@@ -76,7 +77,6 @@ h2 {
     font-family: "Raleway", sans-serif;
     font-weight: bold;
     font-size: 4.8rem;
-    text-align: center;
 }
 
 h3 {
@@ -86,7 +86,9 @@ h3 {
 }
 
 p {
-    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.4rem;
+    line-height: 1.33;
 }
 
 .square {
@@ -149,6 +151,7 @@ p {
 
 .logo-text {
     padding-left: 1.8rem;
+    text-align: left;
 }
 
 
@@ -156,39 +159,67 @@ p {
 .menu {
     display: flex;
     justify-content: space-between;
-    border: 1px solid red;
-	display: flex;
-    text-transform: uppercase;
+    
     /* width: 43.6rem; */
 }
 
-.menu-item {
-    padding-left: 2rem;
-    padding-right: 2rem;
+.menu-link {
+    display: block;
+    padding: 1.5rem 2rem;
+    margin: .5rem;
+    font-size: 1.4rem;
+    line-height: 1.28;
+    font-weight: 700;
+    text-decoration: none;
+    color: currentColor;
+    text-transform: uppercase;
+    transition: .3s;
+
+}
+
+.menu-link:hover,
+.menu-link:focus {
+    background-color: var(--primary);
+    color: #fff;
 }
 
 /* Hero */
 .hero {
+    display: flex;
+	align-items: center;
+    min-height: 80vh;
+    padding-top: 5rem;
+	padding-bottom: 5rem;
 	background-image: url(../img/bg-slider-01.jpg);
 	background-size: cover;
 	background-position: center;
 }
 
+@media (min-resolution: 144dpi) {
+	.hero {
+		background-image: url(../img/bg-slider-01@2x.jpg);
+	}
+}
+
 .hero .container {
-    display: block;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 128rem;
 }
 
 .hero h2 {
     font-family: "Raleway", sans-serif;
     color: var(--primary);
     font-size: 6.4rem;
+    line-height: 1.17;
     font-weight: 700;
-    text-align: center;;
 }
 
 .hero p {
     font-size: 3.2rem;
-    text-align: center;
+    line-height: 1;
+    max-width: 104.8rem;
 }
 
 
