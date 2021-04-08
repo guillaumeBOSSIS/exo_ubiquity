@@ -83,6 +83,8 @@ h3 {
     font-family: "Raleway", sans-serif;
     font-weight: bold;
     font-size: 2.4rem;
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
 }
 
 p {
@@ -95,6 +97,7 @@ p {
     display: inline-block;
     padding-left: 0.25rem;
     padding-right: 0.25rem;
+    margin-bottom: 3.2rem;
     height: 10px;
     width: 10px;
     /* background-color: #555; */
@@ -224,15 +227,34 @@ p {
 
 
 /* Services */
+.services {
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+}
+
 .services-grid {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
+    gap: 0.2rem;
+    margin-top: 5rem;
+    margin-bottom: 12rem;
 }
 
-.service-card {
+/* .service-card {
     display: flex;
     flex-direction: column;
     align-items: center;
+} */
+
+.service-img {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 12.5rem;
+	height: 12.5rem;
+	margin: 0 auto 1.5rem;
+	background-color: #EEEEEE;
+	border-radius: 50%;
 }
 
 /* Description */
@@ -251,6 +273,146 @@ p {
     color: #eee;
 }
 
+.description img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .description .container {
     
+}
+
+
+/* Publications */
+.publications {
+    background-color: #F9F9F9;
+}
+
+.publications-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10rem 4rem;    /* ligne / colonne */
+}
+
+.publication-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 4.5rem;
+    max-width: 40rem;
+    max-height: 60.2rem;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0rem 0.3rem 0.6rem  #00000029;
+}
+
+
+/* Fun facts */
+.statistics {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(../img/bg-fun-facts.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.statistics .container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.statistics-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.statistic-number {
+    color: var(--primary);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 6.4rem;
+    line-height: 1.21;
+}
+
+.statistic-name {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 1.33;
+    text-transform: uppercase;
+}
+
+
+/* User reviews */
+.user-review {
+    background-image: url(../img/bg-user-review.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+ .user-review .container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.user-review-card {
+    display: grid;
+    grid-template-columns: 1fr 5.28fr;
+    gap: 5rem;
+    
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+
+}
+
+.user-review-card img {
+    border-radius: 50%;
+    min-width: 22rem;
+    
+}
+
+.user-review-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #FFF;
+    text-align: left;
+}
+
+.user-review-txt h2 {
+    line-height: 1.16;
+    padding-bottom: 2.4rem;
+}
+
+
+/* Footer */
+
+.main-footer {
+    background-color: #333333;
+}
+
+.main-footer .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: left;
+}
+
+.main-footer h3 {
+    color: var(--primary);
+    text-transform: uppercase;
+    font-family: "Raleway", sans-serif;
+}
+
+.footer-item a {
+    color: #CCCCCC;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+
+.footer-list li {
+    list-style-image: url(../img/icon-angle-double-right.svg);
+    margin-left: 2rem;
 }
