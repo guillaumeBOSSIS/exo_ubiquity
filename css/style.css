@@ -73,6 +73,15 @@ body {
 	padding-right: 1.5rem;
 }
 
+.services,
+.description,
+.publications,
+.statistics,
+.user-review {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+}
+
 h2 {
     font-family: "Raleway", sans-serif;
     font-weight: bold;
@@ -113,6 +122,47 @@ p {
 
 .square-white {
     background-color: #eee;
+}
+
+
+/* Points de rupture de BootStrap : 0 <= X-small < 576 <= small < 768 <= medium < 992 <= large < 1200 <= X-large < 1400 <= XX-large 
+
+Dans notre cas, XX-large ne sera pas utilisé 
+Largeur du container dans les différents cas
+^
+X-large : container = 1170px 
+^
+large : container = 962px
+^
+medium : container = 738px
+^
+small : container = 546px
+^
+x-small : container = 100%
+*/
+
+@media screen and (min-width: 36em) { /* 36em = 36 * 16 (base navigateur) = 576px */
+	.container {
+		max-width: 54.6rem;
+	}
+}
+
+@media screen and (min-width: 48em) { /* 768px */
+	.container {
+		max-width: 73.8rem;
+	}
+}
+
+@media screen and (min-width: 62em) { /* 992px */
+	.container {
+		max-width: 96.2rem;
+	}
+}
+
+@media screen and (min-width: 75em) { /* 1200px */
+	.container {
+		max-width: 117rem;
+	}
 }
 
 /* Header */
@@ -228,8 +278,12 @@ p {
 
 /* Services */
 .services {
-	padding-top: 5rem;
-	padding-bottom: 5rem;
+	background-color: #fff;
+}
+
+.services .container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 .services-grid {
@@ -237,7 +291,6 @@ p {
 	grid-template-columns: repeat(4, 1fr);
     gap: 0.2rem;
     margin-top: 5rem;
-    margin-bottom: 12rem;
 }
 
 /* .service-card {
@@ -263,6 +316,11 @@ p {
     background-image: url(../img/bg-bokehback.jpg);
 	background-size: cover;
 	background-position: center;
+    padding-bottom: 0;
+
+}
+.description .container {
+    padding-top: 5rem;
 }
 
 .description h2 {
@@ -271,6 +329,10 @@ p {
 
 .description p {
     color: #eee;
+    margin-bottom: 12rem;
+    max-width: 104rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .description img{
@@ -279,20 +341,45 @@ p {
     margin-right: auto;
 }
 
-.description .container {
-    
-}
 
 
 /* Publications */
 .publications {
     background-color: #F9F9F9;
+    /* padding-top: 17rem;
+    padding-bottom: 18rem; */
+}
+
+.publications .container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 .publications-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 10rem 4rem;    /* ligne / colonne */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 48em) {
+	.publications-grid  {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (min-width: 62em) {
+	.publications-grid  {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.publications p {
+    margin-bottom: 12rem;
+    max-width: 104rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .publication-card {
@@ -300,9 +387,9 @@ p {
     flex-direction: column;
     align-items: center;
     background-color: #fff;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    padding-top: 0.5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: 2.5rem;
     padding-bottom: 4.5rem;
     max-width: 40rem;
     max-height: 60.2rem;
@@ -361,9 +448,6 @@ p {
     display: grid;
     grid-template-columns: 1fr 5.28fr;
     gap: 5rem;
-    
-    margin-top: 8rem;
-    margin-bottom: 8rem;
 
 }
 
@@ -390,19 +474,44 @@ p {
 /* Footer */
 
 .main-footer {
-    background-color: #333333;
+    background-color: #333333; 
 }
 
 .main-footer .container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3rem 2rem;
     text-align: left;
+    color: #CCCCCC;
+    font-size: 2rem;
+    
+}
+
+@media screen and (min-width: 48em) {
+	.main-footer .container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (min-width: 75em) {
+	.main-footer .container {
+		grid-template-columns: repeat(4, 1fr);
+	}
 }
 
 .main-footer h3 {
     color: var(--primary);
     text-transform: uppercase;
     font-family: "Raleway", sans-serif;
+}
+
+.footer-item {
+    min-height: 21.2rem;
+    border: 1px solid blue;
+}
+
+.footer-list {
+    border: 1px solid red;
 }
 
 .footer-item a {
@@ -412,7 +521,14 @@ p {
     font-weight: 400;
 }
 
-.footer-item a:hover {
+/* .footer-item p {
+    color: #CCCCCC;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+} */
+
+.footer-list-item a:hover {
     color: var(--primary);
 }
 
@@ -427,6 +543,7 @@ ul.footer-list {
 
 ul.footer-list li {
     padding-left: 2rem;
+    line-height: 2.05;
     background-image: url(../img/icon-angle-double-right.svg);
     background-position: 0 center;
     background-size: 1.0572rem;
@@ -441,10 +558,10 @@ ul.footer-list li {
 .tags-list {
     display: flex;
     flex-wrap: wrap;
-    
+    border: 1px solid red;
 }
 
-.tag-list-item {
+.tags-list-item {
     padding-bottom: 1.2rem;
 }
 
@@ -453,11 +570,63 @@ ul.footer-list li {
     background-color: #444444;
     margin-right: 1.2rem;
     margin-bottom: 1.2rem;
-    
+    text-transform: uppercase;
+    font-size: 1.2rem;
 }
 
 .tag-link:hover {
     color: #fff;
     background-color: var(--primary);
     transition: 0.3s;
+}
+
+.tag-link a:hover {
+    color: #fff;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;
+    border: 1px solid red;
+}
+
+.contact-list-item {
+    display: flex;
+    flex-direction: row;
+    align-items:flex-start;
+    font-size: 2rem;
+    color: #CCCCCC;
+    border: 1px solid green;
+}
+
+.contact-list-item img {
+    padding-right: 1rem;
+    padding-top: 0.4rem;
+    max-width: 3.5rem;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: space-between;
+    border-top: 5px solid #707070;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    grid-column: 1 / -1;
+}
+
+.footer-social p {
+    color: #777777;
+    font-size: 2.4rem;
+}
+
+ul.social-list {
+    display: flex;
+    flex-direction: row;
+}
+
+.social-list-item img {
+    margin-left: 2.6rem;
+    min-height: 3rem;
 }
