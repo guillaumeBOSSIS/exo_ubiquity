@@ -169,6 +169,7 @@ x-small : container = 100%
 
 .main-header {
 	/*color: #fff;*/
+    position: relative;
 	background-color: #fff;
 }
 
@@ -209,11 +210,53 @@ x-small : container = 100%
 
 
 /* Navigation */
+[hidden] {
+	display: block;
+	visibility: hidden;
+}
+
+.toggle-menu {
+	background-color: #fff;
+	padding: 1.5rem;
+	border: 0;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    line-height: 1.28;
+    font-weight: 700;
+    
+}
+
 .menu {
-    display: flex;
+    position: absolute;
+    z-index: 10;
+    top: 100%;
+    left: 0;
+    right: 0;
+    /* display: flex; */
     justify-content: space-between;
+    background-color: #fff;
+    transform: translateX(-100%);
+	transition: .5s;
     
     /* width: 43.6rem; */
+}
+
+.menu:not([hidden]) {
+	transform: translateX(0);
+	/* transition: visibility .001s, transform .5s .001s ease-in; */
+}
+
+@media screen and (min-width: 48em) {
+	.toggle-menu {
+		display: none;
+	}
+
+	.menu {
+		display: flex;
+		position: static;
+		visibility: visible;
+		transform: translateX(0);
+	}
 }
 
 .menu-link {
@@ -231,9 +274,12 @@ x-small : container = 100%
 }
 
 .menu-link:hover,
-.menu-link:focus {
+.menu-link:focus,
+.toggle-menu:hover,
+.toggle-menu:focus {
     background-color: var(--primary);
     color: #fff;
+    transition: .3s;
 }
 
 /* Hero */
